@@ -5,8 +5,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.gemini_client import stream_generate
 from utils.storage import save_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="文章要約", page_icon="📋", layout="wide")
+show_sidebar_input()
 st.title("📋 文章要約")
 st.markdown("長い文章を指定の長さ・形式で要約します。議事録・記事・レポートなどに対応。")
 st.markdown("---")

@@ -5,8 +5,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.gemini_client import stream_generate
 from utils.storage import save_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="ブログ記事生成", page_icon="📝", layout="wide")
+show_sidebar_input()
 st.title("📝 ブログ記事生成")
 st.markdown("テーマや条件を入力して、ブログ記事を自動生成します。")
 st.markdown("---")

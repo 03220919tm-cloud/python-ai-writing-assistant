@@ -5,8 +5,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.gemini_client import stream_generate
 from utils.storage import save_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="文章校正・改善", page_icon="✏️", layout="wide")
+show_sidebar_input()
 st.title("✏️ 文章校正・改善")
 st.markdown("文章のミスや改善点を指摘し、より良い文章に仕上げます。")
 st.markdown("---")

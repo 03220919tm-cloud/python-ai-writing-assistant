@@ -5,8 +5,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.gemini_client import stream_generate
 from utils.storage import save_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="メール返信生成", page_icon="📧", layout="wide")
+show_sidebar_input()
 st.title("📧 メール返信生成")
 st.markdown("受信したメールを貼り付けると、適切な返信文を自動生成します。")
 st.markdown("---")

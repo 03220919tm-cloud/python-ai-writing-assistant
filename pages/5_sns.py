@@ -5,8 +5,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.gemini_client import stream_generate
 from utils.storage import save_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="SNS投稿文生成", page_icon="📱", layout="wide")
+show_sidebar_input()
 st.title("📱 SNS投稿文生成")
 st.markdown("伝えたいことを入力するだけで、各SNSに最適な投稿文を自動生成します。")
 st.markdown("---")

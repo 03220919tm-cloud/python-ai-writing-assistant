@@ -5,8 +5,10 @@ from datetime import datetime, date, time
 
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.storage import load_drafts, save_draft, delete_draft, update_draft
+from utils.api_key import show_sidebar_input
 
 st.set_page_config(page_title="文章スケジューラー", page_icon="📅", layout="wide")
+show_sidebar_input()
 st.title("📅 文章スケジューラー")
 st.markdown("下書き文章の保存・管理・予約日時の設定ができます。")
 st.markdown("---")

@@ -2,19 +2,22 @@ import os
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
+from utils.api_key import get_api_key
 
 load_dotenv()
 
 _client = None
+_client_api_key = None
 
 
 def get_client() -> genai.Client:
-    global _client
-    api_key = os.getenv("GEMINI_API_KEY")
+    global _client, _client_api_key
+    api_key = get_api_key()
     if not api_key:
-        raise ValueError("GEMINI_API_KEY が設定されていません。.env ファイルを確認してください。")
-    if _client is None:
+        raise ValueError("Gemini API キーが設定されていません。サイドバーに入力するか、.env ファイルを確認してください。")
+    if _client is None or _client_api_key != api_key:
         _client = genai.Client(api_key=api_key)
+        _client_api_key = api_key
     return _client
 
 
